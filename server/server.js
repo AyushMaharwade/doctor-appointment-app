@@ -34,7 +34,7 @@ mongoose.connect(dbURI, {
 const db = mongoose.connection;
 
 db.on("error", (error) => {
-  console.error("❌ Connection error:", error);
+  console.error(" Connection error:", error);
 });
 
 db.on("disconnected", () => {
