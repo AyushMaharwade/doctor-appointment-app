@@ -17,10 +17,12 @@ import { loginSchema } from "./components/validationSchema";
 // Utils Imports
 import { onKeyDown } from "../../utils";
 // Images Imports
-import BottomLogo from "../../assets/images/bottomLogo.svg";
 // Redux API
 import { useLoginMutation } from "../../redux/api/authApiSlice";
 import { setUser } from "../../redux/auth/authSlice";
+
+
+
 
 interface ISLoginForm {
   email: string;
@@ -106,9 +108,9 @@ const Login = () => {
           }}
         >
           <img
-            src={BottomLogo}
-            alt="bottom logo"
-            style={{ transform: "rotate(-6deg)", height: "200px" }}
+          // src={BottomLogo}
+          // alt="bottom logo"
+          // style={{ transform: "rotate(-6deg)", height: "200px" }}
           />
         </Box>
 
@@ -155,15 +157,26 @@ const Login = () => {
                   flexDirection: "column",
                 }}
               >
+
                 <Heading
                   sx={{
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
+                    color: "black"
                   }}
                 >
-                  Login
+                  Welcome Back
                 </Heading>
+                <SubHeading sx={{
+                  color: "#4b5563",
+                  display: "flex",
+                  justifyContent: " center",
+                  alignItems: "center",
+                  fontSize: "13px"
+                }}>
+                  Please Enter Your Details
+                </SubHeading>
                 <Formik
                   initialValues={formValues}
                   onSubmit={(values: ISLoginForm) => {
@@ -182,6 +195,7 @@ const Login = () => {
 
                     return (
                       <Form onKeyDown={onKeyDown}>
+
                         <Box
                           sx={{
                             height: "95px",
@@ -266,12 +280,13 @@ const Login = () => {
           <Box
             sx={{
               flex: 1,
-              backgroundColor: "#4158D0",
-              backgroundImage:
-                "linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)",
+              background: "linear-gradient(to bottom right, rgba(37, 99, 235, 0.5), rgba(30, 64, 175, 0.5), rgba(107, 33, 168, 0.5)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+              backgroundSize: "cover", // Ensures the image covers the area without stretching
+              backgroundPosition: "center", // Centers the background image
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              borderRadius: "0px 0px 0px 1000px",
             }}
           >
             <Box sx={{ position: "relative", margin: "0 auto" }}>
@@ -290,7 +305,7 @@ const Login = () => {
                 }}
               >
                 <Heading sx={{ fontSize: "45px", color: "#fff" }}>
-                  Welcome to MD Clinic
+                  Welcome to Smart Doc
                 </Heading>
                 <SubHeading
                   sx={{
@@ -326,7 +341,7 @@ const Login = () => {
             </Box>
           </Box>
         </Box>
-      </Box>
+      </Box >
       <ToastAlert
         appearence={toast.appearence}
         type={toast.type}

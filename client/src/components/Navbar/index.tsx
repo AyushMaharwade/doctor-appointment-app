@@ -244,7 +244,7 @@ export default function Navbar({ children }: DashboardProps) {
       <Drawer variant="permanent" open={open}>
         <DrawerHeader sx={{ display: "flex", justifyContent: "space-between" }}>
           <Box sx={{ marginLeft: "20px", fontWeight: "600", fontSize: "20px" }}>
-            MD Clinic
+            Smart Doc
           </Box>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "ltr" ? <RiMenu2Fill /> : <RiMenu3Fill />}

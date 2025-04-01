@@ -115,7 +115,7 @@ const Signup = () => {
             },
           }}
         >
-          <img src={NextWhiteLogo} alt="logo" style={{ height: 200 }} />
+          {/* <img src={NextWhiteLogo} alt="logo" style={{ height: 200 }} /> */}
         </Box>
 
         <Box
@@ -131,12 +131,13 @@ const Signup = () => {
           <Box
             sx={{
               flex: 1,
-              backgroundColor: "#4158D0",
-              backgroundImage:
-                "linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)",
+              background: "linear-gradient(to bottom right, rgba(37, 99, 235, 0.5), rgba(30, 64, 175, 0.5), rgba(107, 33, 168, 0.5)), url('https://images.pexels.com/photos/4021779/pexels-photo-4021779.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
+              backgroundSize: "cover", // Ensures the image covers the area without stretching
+              backgroundPosition: "center", // Centers the background image
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              borderRadius: "0px 0px 1000px 0px",
             }}
           >
             <Box sx={{ position: "relative", margin: "0 auto" }}>
