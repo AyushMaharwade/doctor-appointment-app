@@ -60,7 +60,7 @@ export function formatTime(inputDateString: string) {
 // Masking Mobile Number +923234910944 => 0323 4910955
 export const maskingPhoneNumber = (value: any) => {
   if (value) {
-    const phoneNumber = parsePhoneNumber(value);
+    const phoneNumber = parsePhoneNumber(value,'IN');
     return phoneNumber.formatNational();
   }
 };

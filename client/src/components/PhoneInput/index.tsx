@@ -50,7 +50,7 @@ const PrimaryPhoneInput = ({
         setDefaultCountry(response?.data?.country_code.toLowerCase());
       } else {
         setLoader(false);
-        setDefaultCountry("pk");
+        setDefaultCountry("in");
       }
     } catch (error) {
       setLoader(false);
@@ -80,7 +80,7 @@ const PrimaryPhoneInput = ({
           },
         }}
         defaultCountry={
-          countryCode ? countryCode.toLowerCase() : defaultCountry || "pk"
+          countryCode ? countryCode.toLowerCase() : defaultCountry || "in"
         }
         onChange={(e: any) => {
           onChange
