@@ -40,8 +40,9 @@ const UserProfile = () => {
             background: "#fff",
             borderRadius: "6px",
             padding: "15px 20px",
+            maxWidth: '1400px',
             boxShadow: "rgba(0, 0, 0, 0.1) 0px 0px 10px",
-            maxWidth: "320px",
+            
           }}
         >
           <Box
@@ -49,11 +50,12 @@ const UserProfile = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
+              
             }}
           >
-            <Box sx={{ fontSize: "14px", fontWeight: 500 }}>
+            {/* <Box sx={{ fontSize: "14px", fontWeight: 500 }}>
               {isDoctor ? "Doctor" : isAdmin ? "Owner" : "User"}
-            </Box>
+            </Box> */}
             {isAdmin && (
               <Box
                 sx={{
@@ -70,48 +72,70 @@ const UserProfile = () => {
           </Box>
           <Box
             sx={{
-              display: "flex",
-              justifyContent: "center",
-              margin: "20px 0 15px 0",
+              display: 'flex',
+              marginBottom: '32px',
+              alignItems: 'center',
+              justifyContent: 'center'
             }}
           >
-            <Avatar sx={{ width: 56, height: 56 }}>
+            <Avatar sx={{
+              width: '96px',
+              height: '96px',
+              borderRadius: '50%',
+              backgroundColor: '#E2E8F0',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              //  marginRight: '24px',
+              color: '#4A5568',
+              fontSize: '36px',
+              fontWeight: '600',
+            }}>
               {getNameInitials(data?.data?.name)}
             </Avatar>
           </Box>
           <Heading
             sx={{
-              display: "flex",
-              justifyContent: "center",
-              margin: "5px 0 0px",
-              fontSize: "18px",
-              fontWeight: 700,
+              fontSize: '28px',
+              color: 'black',
+              marginBottom: '8px',
+              fontWeight: '600',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+
             }}
           >
             {data?.data?.name}
           </Heading>
           <Box
             sx={{
-              display: "flex",
-              justifyContent: "center",
-              margin: "0 0 15px 0",
-              fontSize: "14px",
+              color: '#4A5568',
+              fontSize: '14px',
+              fontWeight: '500',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              paddingRight: '2px'
             }}
           >
-            {maskingPhoneNumber(data?.data?.phoneNumber)}
+            <Box sx={{ paddingRight: '5px' }}>Phone Number: </Box>
+            <Box sx={{ color:'black'}}>{maskingPhoneNumber(data?.data?.phoneNumber)}</Box>
           </Box>
 
           <Box
             sx={{
-              display: "flex",
-              alignItems: "center",
-              fontSize: "12px",
-              gap: 2,
-              marginTop: "10px",
+              
+              fontSize: '14px',
+              fontWeight: '500',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: '#4A5568'
             }}
           >
-            <Box>Created At:</Box>
-            <Box>{formatDateTime(data?.data?.createdAt)}</Box>
+            <Box sx={{ paddingRight: '5px' }}>Created At: </Box>
+            <Box sx={{ color:'black'}}>{formatDateTime(data?.data?.createdAt)}</Box>
           </Box>
         </Box>
       </Navbar>

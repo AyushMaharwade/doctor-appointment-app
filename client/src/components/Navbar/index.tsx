@@ -243,7 +243,7 @@ export default function Navbar({ children }: DashboardProps) {
       </AppBar>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Box sx={{ marginLeft: "20px", fontWeight: "600", fontSize: "20px" }}>
+          <Box sx={{ marginLeft: "20px", fontWeight: "600", fontSize: "20px", color: "#0095c8" }}>
             Smart Doc
           </Box>
           <IconButton onClick={handleDrawerClose}>

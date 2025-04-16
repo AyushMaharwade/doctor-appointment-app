@@ -11,6 +11,8 @@ import { IoPhonePortraitOutline } from "react-icons/io5";
 import { CiLocationOn } from "react-icons/ci";
 import { CiMoneyCheck1 } from "react-icons/ci";
 import { IoMdTime } from "react-icons/io";
+import { CgProfile } from "react-icons/cg";
+
 // MUI Imports
 import { Box, Grid, Divider } from "@mui/material";
 // Custom Imports
@@ -62,13 +64,15 @@ const Dashboard = () => {
                           boxShadow: "rgba(0, 0, 0, 0.1) 0px 0px 10px",
                           cursor: "pointer",
                           "&:hover": {
-                            border: "2px solid #13B981",
+                            border: "2px solid #b6ecff",
                           },
                         }}
                         onClick={() => {
                           navigate(`/book-appointments/${row?.userId}`);
                         }}
                       >
+                        <Box sx={{ display: "flex" }}>
+                        <CgProfile style={{ color: "#0095c8", width: "35px", height: "35px", padding: "5px"  }}/>
                         <Heading
                           sx={{
                             margin: "5px 0",
@@ -79,16 +83,28 @@ const Dashboard = () => {
                           }}
                         >
                           {`${row?.prefix} ${row?.fullName}`}
-                          <Box sx={{ fontSize: "14px" }}>
-                            {`(${row?.specialization})`}
+                          <Box sx={{
+                            color: "#0095c8",
+                            fontSize: "12px",
+                            // marginBottom: "24px",
+                            
+                            display: "inline-block",
+                            padding: "5px 12px",
+                            backgroundColor: "#b6ecff",
+                            borderRadius: "16px",
+                          }}>
+                            {`${row?.specialization}`}
                           </Box>
                         </Heading>
+                        </Box>
                         <Divider />
                         <Box
                           sx={{
                             margin: "15px 0 10px 0",
                             display: "flex",
                             alignItems: "center",
+                  
+                            
                           }}
                         >
                           <Box
@@ -99,10 +115,10 @@ const Dashboard = () => {
                               gap: "3px",
                             }}
                           >
-                            <IoPhonePortraitOutline />
+                            <IoPhonePortraitOutline style={{ color: "#0095c8", width: "20px", height: "20px"  }} />
                             Phone Number
                           </Box>
-                          <Box>{maskingPhoneNumber(row?.phoneNumber)}</Box>
+                          <Box  >{maskingPhoneNumber(row?.phoneNumber)}</Box>
                         </Box>
                         <Box
                           sx={{
@@ -119,7 +135,7 @@ const Dashboard = () => {
                               gap: "3px",
                             }}
                           >
-                            <CiLocationOn />
+                            <CiLocationOn style={{ color: "#0095c8", width: "20px", height: "20px"  }} />
                             Address
                           </Box>
                           <Box>{row?.address}</Box>
@@ -139,7 +155,7 @@ const Dashboard = () => {
                               gap: "3px",
                             }}
                           >
-                            <CiMoneyCheck1 /> Fee Per Visit
+                            <CiMoneyCheck1 style={{ color: "#0095c8", width: "20px", height: "20px"  }} /> Fee Per Visit
                           </Box>
                           <Box>
                             {thousandSeparatorNumber(row?.feePerConsultation)}
@@ -160,7 +176,7 @@ const Dashboard = () => {
                               gap: "3px",
                             }}
                           >
-                            <IoMdTime />
+                            <IoMdTime style={{ color: "#0095c8", width: "20px", height: "20px" }} />
                             Timings
                           </Box>
                           <Box>{`${convertToAMPMFormat(
