@@ -188,7 +188,18 @@ export default function Navbar({ children }: DashboardProps) {
           >
             <RiMenu3Fill />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{
+              fontFamily: `'Segoe UI', Tahoma, Geneva, Verdana, sans-serif`,
+              fontWeight: '650',
+              color: '#2c3e50',
+              letterSpacing: '0.5px',
+              padding: '4px 8px',
+            }}
+          >
             {userName}
           </Typography>
           <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
@@ -259,7 +270,7 @@ export default function Navbar({ children }: DashboardProps) {
               sx={{
                 display: "block",
                 backgroundColor:
-                  location.pathname === route.path ? "#eff1f7" : "inherit",
+                  location.pathname === route.path ? "#C3EAFA" : "inherit",
                 borderRadius: "10px",
               }}
             >
