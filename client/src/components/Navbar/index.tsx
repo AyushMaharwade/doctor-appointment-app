@@ -142,7 +142,7 @@ export default function Navbar({ children }: DashboardProps) {
       icon: IoDocumentTextOutline,
       path: "/appointments",
     },
-    { text: "Apply Doctor", icon: FaUserDoctor, path: "/apply-doctor" },
+    { text: "Apply as Doctor", icon: FaUserDoctor, path: "/apply-doctor" },
     { text: "Profile", icon: FaRegCircleUser, path: `/profile/${userId}` },
   ];
 
