@@ -32,89 +32,122 @@ const UserProfile = () => {
   return (
     <>
       {isLoading && <OverlayLoader />}
-      <Navbar>
-        <Heading>Profile Details</Heading>
-        <Box
-          sx={{
-            margin: "20px 0",
-            background: "#fff",
-            borderRadius: "6px",
-            padding: "15px 20px",
-            boxShadow: "rgba(0, 0, 0, 0.1) 0px 0px 10px",
-            maxWidth: "320px",
-          }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
-          >
-            <Box sx={{ fontSize: "14px", fontWeight: 500 }}>
-              {isDoctor ? "Doctor" : isAdmin ? "Owner" : "User"}
-            </Box>
-            {isAdmin && (
-              <Box
-                sx={{
-                  background: "#0078a5",
-                  fontSize: "12px",
-                  color: "#fff",
-                  borderRadius: "15px",
-                  padding: "5px 10px",
-                }}
-              >
-                Admin
-              </Box>
-            )}
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              margin: "20px 0 15px 0",
-            }}
-          >
-            <Avatar sx={{ width: 56, height: 56 }}>
-              {getNameInitials(data?.data?.name)}
-            </Avatar>
-          </Box>
-          <Heading
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              margin: "5px 0 0px",
-              fontSize: "18px",
-              fontWeight: 700,
-            }}
-          >
-            {data?.data?.name}
-          </Heading>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              margin: "0 0 15px 0",
-              fontSize: "14px",
-            }}
-          >
-            {maskingPhoneNumber(data?.data?.phoneNumber)}
-          </Box>
 
+      <Box sx={{
+        background: "#EAF6FF",
+        width: "100%",
+        height: "100%"
+      }}>
+        <Navbar>
+
+          <Heading>Profile Details</Heading>
           <Box
             sx={{
-              display: "flex",
-              alignItems: "center",
-              fontSize: "12px",
-              gap: 2,
-              marginTop: "10px",
+              margin: "20px 0",
+              background: "#fff",
+              borderRadius: "6px",
+              padding: "15px 20px",
+              maxWidth: '1400px',
+              boxShadow: "rgba(0, 0, 0, 0.1) 0px 0px 10px",
+
             }}
           >
-            <Box>Created At:</Box>
-            <Box>{formatDateTime(data?.data?.createdAt)}</Box>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+
+              }}
+            >
+              {/* <Box sx={{ fontSize: "14px", fontWeight: 500 }}>
+              {isDoctor ? "Doctor" : isAdmin ? "Owner" : "User"}
+            </Box> */}
+              {isAdmin && (
+                <Box
+                  sx={{
+                    background: "#0078a5",
+                    fontSize: "12px",
+                    color: "#fff",
+                    borderRadius: "15px",
+                    padding: "5px 10px",
+                  }}
+                >
+                  Admin
+                </Box>
+              )}
+            </Box>
+            <Box
+              sx={{
+                display: 'flex',
+                marginBottom: '32px',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
+              <Avatar sx={{
+                width: '96px',
+                height: '96px',
+                borderRadius: '50%',
+                backgroundColor: '#C3EAFA',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                //  marginRight: '24px',
+                color: '#2c3e50',
+                fontSize: '36px',
+                fontWeight: '600',
+              }}>
+                {getNameInitials(data?.data?.name)}
+              </Avatar>
+            </Box>
+            <Heading
+              sx={{
+                fontSize: '28px',
+                fontFamily: `'Segoe UI', Tahoma, Geneva, Verdana, sans-serif`,
+                fontWeight: '500',
+                color: '#2c3e50',
+                marginBottom: '8px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+
+              }}
+            >
+              {data?.data?.name}
+            </Heading>
+            <Box
+              sx={{
+                color: '#4A5568',
+                fontSize: '14px',
+                fontWeight: '500',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                paddingRight: '2px'
+              }}
+            >
+              <Box sx={{ paddingRight: '5px' }}>Phone Number: </Box>
+              <Box sx={{ color: 'black' }}>{maskingPhoneNumber(data?.data?.phoneNumber)}</Box>
+            </Box>
+
+            <Box
+              sx={{
+
+                fontSize: '14px',
+                fontWeight: '500',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#4A5568'
+              }}
+            >
+              <Box sx={{ paddingRight: '5px' }}>Created At: </Box>
+              <Box sx={{ color: 'black' }}>{formatDateTime(data?.data?.createdAt)}</Box>
+            </Box>
           </Box>
-        </Box>
-      </Navbar>
+        </Navbar>
+      </Box>
     </>
   );
 };

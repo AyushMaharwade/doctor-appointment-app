@@ -224,7 +224,7 @@ const BookAppointment = () => {
                       gap: 1,
                     }}
                   >
-                    <IoMdTime />
+                    <IoMdTime/>
                     <Box>{`${convertToAMPMFormat(
                       data?.data?.fromTime
                     )} to ${convertToAMPMFormat(data?.data?.toTime)}`}</Box>
@@ -256,6 +256,7 @@ const BookAppointment = () => {
                               handleChange={(value: any) => {
                                 setFieldValue("date", value);
                                 setIsAvailable(false);
+                                
                               }}
                             />
                             {errors.date && touched.date && (
@@ -276,6 +277,7 @@ const BookAppointment = () => {
                             </SubHeading>
                             <LocalizationProvider dateAdapter={AdapterDayjs}>
                               <TimePicker
+                               
                                 label=""
                                 value={values.time}
                                 onChange={(value) => {
@@ -288,6 +290,7 @@ const BookAppointment = () => {
                                     {...params}
                                   />
                                 )}
+                                
                               />
                               {errors.time && touched.time && (
                                 <Box
@@ -300,7 +303,7 @@ const BookAppointment = () => {
                                   {errors.time}
                                 </Box>
                               )}
-                            </LocalizationProvider>
+                            </LocalizationProvider >
                           </Box>
                           <Box
                             sx={{
@@ -397,7 +400,7 @@ const BookAppointment = () => {
                       gap: "3px",
                     }}
                   >
-                    <IoMdTime />
+                    <IoMdTime  />
                     Consultation Time
                   </Box>
                   <Box>30 Minutes </Box>
@@ -417,7 +420,7 @@ const BookAppointment = () => {
                       gap: "3px",
                     }}
                   >
-                    <RiLuggageDepositLine />
+                    <RiLuggageDepositLine  />
                     Department
                   </Box>
                   <Box>{data?.data?.specialization}</Box>
@@ -437,7 +440,7 @@ const BookAppointment = () => {
                       gap: "3px",
                     }}
                   >
-                    <MdOutlineExplicit />
+                    <MdOutlineExplicit   />
                     Experience
                   </Box>
                   <Box>{data?.data?.experience} Years </Box>
@@ -458,7 +461,7 @@ const BookAppointment = () => {
                       gap: "3px",
                     }}
                   >
-                    <CiMoneyCheck1 />
+                    <CiMoneyCheck1   />
                     Fee Per Visit
                   </Box>
                   <Box>
@@ -480,7 +483,7 @@ const BookAppointment = () => {
                       gap: "3px",
                     }}
                   >
-                    <CiLocationOn />
+                    <CiLocationOn   />
                     Location
                   </Box>
                   <Box>{data?.data?.address}</Box>
